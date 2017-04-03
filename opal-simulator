@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+
+
+using namespace std;
+
+
+class opal{
+
+public:
+	double distance;
+	double price;
+	double fare;
+	//double balance;
+	double min = 2.10;
+
+	double setPrice(){
+		fare = 0.20;
+		price = (distance * fare);
+		
+		
+		
+		double fin = price + min;
+
+		return fin;
+
+		//so far what I need is:
+		//* develop a way to stop counting the fare up to 10km;
+		//* something that adds the 30% up on the onpeak fare (which sucks a lot);
+
+	}
+};
+
+void main(){
+
+	opal travel;
+	cout << "Welcome to the Opal Card Fare Deductor Simulator: " << endl;
+	cout << "Enter the distance travelled in KM: ";
+	cin >> travel.distance;
+
+	cout << "Expect a deducted fare of $" << travel.setPrice() << " on your ADULT opal card." << endl;
+	cout << "\n";
+	cout << "Also, be aware that the MINIMUM standard price is around $2.10 from all transport (bus, train, light rail, ferry)" << endl;
+	cout << " which is already included on the fare shown above." << endl;
+	cout << "\n";
+	system("pause");
+}
